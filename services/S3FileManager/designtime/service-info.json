@@ -1,0 +1,8 @@
+{
+  "id" : "S3FileManager",
+  "type" : "JavaService",
+  "packageNames" : [ "com.wavemaker.s3filemanager.s3filemanager" ],
+  "serviceClassNames" : [ "com.wavemaker.s3filemanager.s3filemanager.S3FileManager" ],
+  "title" : "S3FileManager",
+  "mockEnabled" : false
+}

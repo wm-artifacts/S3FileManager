@@ -1,0 +1,52 @@
+{
+  "S3FileManagerFilterObjectsByFolders" : {
+    "_id" : "wm-S3FileManagerFilterObjectsByFolders-wm.ServiceVariable-1716353041066",
+    "name" : "S3FileManagerFilterObjectsByFolders",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "folderPath",
+      "value" : "bind:Widgets.listRootLevelObjectsList1.selecteditem.key",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.connector.awss3connector.AWSS3ObjectSummary",
+    "service" : "S3FileManager",
+    "operation" : "filterObjectsByFolders",
+    "operationId" : "S3fileManagerController_filterObjectsByFolders",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "S3fileManager"
+  },
+  "S3FileManagerListRootLevelObjects" : {
+    "_id" : "wm-S3FileManagerListRootLevelObjects-wm.ServiceVariable-1716351744372",
+    "name" : "S3FileManagerListRootLevelObjects",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.connector.awss3connector.AWSS3ObjectSummary",
+    "service" : "S3FileManager",
+    "operation" : "listRootLevelObjects",
+    "operationId" : "S3fileManagerController_listRootLevelObjects",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "S3fileManager"
+  }
+}

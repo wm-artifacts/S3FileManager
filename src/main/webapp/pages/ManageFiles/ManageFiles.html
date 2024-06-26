@@ -1,0 +1,126 @@
+<wm-page name="mainpage" pagetitle="S3StorageManager">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content">
+        <wm-page-content columnwidth="12" paddingleft="15" paddingright="15" name="mainContent">
+            <wm-container name="container1">
+                <wm-layoutgrid name="layoutgrid2">
+                    <wm-gridrow name="gridrow2" class="flex vert-center" padding="unset 8px">
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn2_1" class="flex-0">
+                            <wm-button class="btn-transparent" caption="" type="button" margin="unset" name="buttonBack" iconclass="wi wi-long-arrow-left fa-lg" on-click="buttonBackClick($event, widget)" show="bind:rootPath.length > 0" deferload="true"></wm-button>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn13_1" class="flex-1">
+                            <wm-label padding="unset" class="h3" type="p" name="label6" caption="bind:rootPath ? rootPath : &quot;S3 File Manager&quot;"></wm-label>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn4" class="flex-0">
+                            <wm-button class="btn-primary" caption="Create folder" type="button" margin="unset" name="buttonCreateFolder" on-click="buttonCreateFolderClick($event, widget);Widgets.dialogCreateFolder.open()"></wm-button>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn3" horizontalalign="right" class="flex-0">
+                            <wm-button class="btn-primary btn-stroked" caption="Upload files" type="button" margin="unset" name="buttonUploadFilesToS3" on-click="Widgets.dialogUploadFilesToS3.open()"></wm-button>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow7_1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                            <wm-list listclass="list-group" template="true" template-name="Business Card" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" statehandler="none" name="listRootLevelFoldersObjectsList1" dataset="bind:Variables.jsGetS3RootLevelObjects.dataSet" navigation="Scroll"
+                                on-dblclick="listRootLevelFoldersObjectsList1Dblclick($event, widget)" pagesize="30" groupby="type" direction="horizontal" match="word" orderby="type:asc">
+                                <wm-listtemplate layout="media" name="listtemplate1">
+                                    <wm-card name="card1">
+                                        <wm-card-content name="card_content1">
+                                            <wm-layoutgrid columns="2" name="layoutgrid1">
+                                                <wm-gridrow name="gridrow9_1" class="flex vert-center">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn12_1" class="flex-0" padding="8px 12px">
+                                                        <wm-icon name="icon1" iconclass="wi wi-folder fa-2x" show="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.size===0" deferload="false"></wm-icon>
+                                                        <wm-icon iconclass="wi wi-picture fa-2x" name="icon3" show="false" deferload="true"></wm-icon>
+                                                        <wm-picture resizemode="cover" name="picture3_1" picturesource="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.key" class="image-preview" show="bind:isImage(Widgets.listRootLevelFoldersObjectsList1.currentItem.key)" deferload="false"></wm-picture>
+                                                        <wm-icon iconclass="wi wi-file-text fa-2x" show="bind:!isImage(Widgets.listRootLevelFoldersObjectsList1.currentItem.key) &amp;&amp; Widgets.listRootLevelFoldersObjectsList1.currentItem.size!==0" deferload="true" name="icon4"></wm-icon>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn13" class="flex-1">
+                                                        <wm-label name="labelFolderName" caption="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;)[Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;).length-2]" margin="0px unset" whitespace="nowrap"
+                                                            show="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.size==0" deferload="true" class="h5 regular" hint="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;)[Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;).length-2]"></wm-label>
+                                                        <wm-label padding="unset" type="p" name="labelFIlePath" caption="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;)[Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;).length-1]
+" show="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.size!==0" whitespace="nowrap" class="h5 regular" hint="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;)[Widgets.listRootLevelFoldersObjectsList1.currentItem.key.split(&quot;/&quot;).length-1]"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn14" class="flex-0">
+                                                        <wm-button class="btn-transparent" caption="" type="button" margin="unset" name="buttonDownload" iconclass="wm-sl-l sl-download-1 " on-click="buttonDownloadClick($event, widget, item, currentItemWidgets);Widgets.dialogDownloadFile.open()" show="bind:Widgets.listRootLevelFoldersObjectsList1.currentItem.size!==0"
+                                                            hint="Download"></wm-button>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn14_1" class="flex-0" padding="unset 0px unset unset">
+                                                        <wm-popover popoverwidth="auto" popoverheight="auto" name="popover1" iconclass="wi wi-more-vert fa-2x" caption="" contentsource="inline" autoclose="always" hint="More actions">
+                                                            <wm-nav type="pills" autoclose="outsideClick" name="nav1" layout="stacked">
+                                                                <wm-nav-item name="nav_item1">
+                                                                    <wm-anchor caption="Delete" name="anchor1" on-click="anchor1Click($event, widget);Widgets.dialogDelete.open()"></wm-anchor>
+                                                                </wm-nav-item>
+                                                                <wm-nav-item name="nav_item2">
+                                                                    <wm-anchor caption="Copy to clipboard" name="anchor2" on-click="anchor2Click($event, widget)"></wm-anchor>
+                                                                </wm-nav-item>
+                                                            </wm-nav>
+                                                        </wm-popover>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-card-content>
+                                    </wm-card>
+                                </wm-listtemplate>
+                            </wm-list>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Create folder" iconclass="" name="dialogCreateFolder" class="modal-sm" closable="false">
+        <wm-composite name="composite1" captionposition="top">
+            <wm-label class="col-md-12 control-label" name="label8" caption="Name of the folder" show="false"></wm-label>
+            <wm-container class="col-md-12" name="container2">
+                <wm-text name="textNewFolder" placeholder="Untitled Folder" autofocus="true" autocomplete="false" autotrim="false"></wm-text>
+            </wm-container>
+        </wm-composite>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogCreateFolder.close()" name="button3"></wm-button>
+            <wm-button class="btn-primary" caption="Create" type="button" margin="unset" name="button4" on-click="Variables.jsCreateS3Folder.invoke()"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Upload files" iconclass="" name="dialogUploadFilesToS3">
+        <wm-dialogactions name="dialogactions2">
+            <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogUploadFilesToS3.close()" name="buttonCloseUploadToS3"></wm-button>
+            <wm-button class="btn-primary" caption="Upload" type="button" margin="unset" name="buttonSaveToS3" on-click="Variables.jsUploadFilesToS3.invoke()"></wm-button>
+        </wm-dialogactions>
+        <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileuploadToS3" caption="Select files " multiple="true" maxfilesize="100"></wm-fileupload>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Download" iconclass="" name="dialogDownloadFile">
+        <wm-layoutgrid name="layoutgrid3">
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn5" horizontalalign="center">
+                    <wm-label padding="unset 0.5em" caption="Are you sure you want to download" name="label4"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn7" horizontalalign="center">
+                    <wm-picture resizemode="cover" name="picture2" picturesource="bind:Widgets.listRootLevelFoldersObjectsList1.selecteditem.key" class="download-preview"></wm-picture>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions3">
+            <wm-button class="btn-default" caption="Cancel" on-click="Widgets.dialogDownloadFile.close()" name="button9"></wm-button>
+            <wm-button class="btn-primary" caption="Download" type="button" margin="unset" name="buttonDownloadFile" on-click="Variables.jsDownloadFile.invoke()"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Delete " iconclass="" name="dialogDelete">
+        <wm-layoutgrid name="layoutgrid5">
+            <wm-gridrow name="gridrow6">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn9" horizontalalign="center">
+                    <wm-label padding="unset 0.5em" caption="Are you sure you want to delete?" name="label4_1"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow7">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn11" horizontalalign="center">
+                    <wm-picture resizemode="cover" name="picture3" picturesource="bind:Widgets.listRootLevelFoldersObjectsList1.selecteditem.key" class="download-preview"></wm-picture>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions4">
+            <wm-button class="btn-default" caption="Cancle" on-click="Widgets.dialogDelete.close()" name="button11"></wm-button>
+            <wm-button class="btn-danger" caption="Delete" type="button" margin="unset" name="button12" on-click="Variables.jsDeleteS3File.invoke()"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

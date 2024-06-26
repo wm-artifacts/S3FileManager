@@ -1,0 +1,50 @@
+<wm-page pagetitle="Manage Files" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                        <wm-list listclass="list-group" itemsperrow="xs-2 sm-2 md-3 lg-3" template="true" template-name="Designation Card" class="list-card" statehandler="none" name="listFoldersAndObjectsList1" dataset="bind:Variables.jsListS3FoldersAndObjects.dataSet" navigation="Scroll"
+                            selectfirstitem="true" pagesize="21">
+                            <wm-listtemplate layout="media" name="listtemplate1">
+                                <wm-card name="Picture">
+                                    <wm-card-content name="card_content1">
+                                        <wm-label name="Name" class="h4" margin="0px unset" caption="bind:Widgets.listFoldersAndObjectsList1.currentItem.folder_name" whitespace="nowrap"></wm-label>
+                                        <wm-label name="JobTitle" class="p text-muted" caption="bind:Widgets.listFoldersAndObjectsList1.currentItem.folder_path" whitespace="nowrap"></wm-label>
+                                        <wm-icon name="icon1"></wm-icon>
+                                    </wm-card-content>
+                                </wm-card>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-2 md-3 lg-3" class="media-list" statehandler="none" name="listSelectedFolderInfo" dataset="bind:Widgets.listFoldersAndObjectsList1.selecteditem.uploadedObjects"
+                            navigation="Scroll" deferload="true" direction="vertical">
+                            <wm-listtemplate layout="inline" name="listtemplate2">
+                                <wm-container class="media-body" padding="unset unset unset 1.25em" on-click="container3Click($event, widget, item, currentItemWidgets)" name="container3" width="50">
+                                    <wm-picture resizemode="cover" picturesource="bind:Widgets.listSelectedFolderInfo.currentItem.object_path" width="50" height="50" name="picture2" show="bind:!(Widgets.listSelectedFolderInfo.currentItem.isFile)"></wm-picture>
+                                </wm-container>
+                                <wm-label padding="unset" name="labelFile" show="bind:Widgets.listSelectedFolderInfo.currentItem.isFile" caption="bind:Widgets.listSelectedFolderInfo.currentItem.object_path"></wm-label>
+                            </wm-listtemplate>
+                        </wm-list>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn7"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn10"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4"></wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
