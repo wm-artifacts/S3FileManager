@@ -1,0 +1,44 @@
+ .wm-app .app-livelist.list-card>.list-group {
+     flex-direction: column-reverse;
+     flex-wrap: nowrap;
+ }
+
+ .app-livelist.list-card .list-group.item-group {
+     flex-wrap: nowrap;
+     flex-direction: column;
+ }
+
+ .app-livelist.list-card .list-group.item-group>.list-group {
+     display: grid !important;
+     /* grid-gap: 16px; */
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ }
+
+ .app-livelist.list-card .list-group.item-group>.list-group::before,
+ .app-livelist.list-card .list-group.item-group>.list-group::after {
+     display: none;
+ }
+
+ .app-livelist.list-card .list-group.item-group>.list-group>li {
+     width: auto;
+ }
+
+ .wm-app .app-card .app-card-content {
+     padding: var(--wm-space-2);
+ }
+
+ .wm-app .app-livelist.list-card .app-list-item {
+     padding: var(--wm-space-2);
+ }
+
+ .image-preview {
+     width: 50px;
+     height: 50px;
+     margin: -16px -8px -18px -14px;
+     border-radius: 4px;
+ }
+
+ .download-preview {
+     max-height: 500px;
+     max-width: 100%;
+ }

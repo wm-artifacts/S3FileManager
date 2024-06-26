@@ -1,0 +1,63 @@
+[ {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManageFiles",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManageFilesOld",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManagePictures",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManageS3Details",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "partialDownload",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "keyName",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "partialImage",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "imageUrl",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

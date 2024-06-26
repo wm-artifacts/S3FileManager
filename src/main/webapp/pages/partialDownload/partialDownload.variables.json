@@ -1,0 +1,28 @@
+{
+  "jsDownloadFileFromS3" : {
+    "_id" : "wm-jsDownloadFileFromS3-wm.ServiceVariable-1674464772068",
+    "name" : "jsDownloadFileFromS3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "s3KeyName",
+      "value" : "bind:pageParams.keyName",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.runtime.commons.file.model.DownloadResponse",
+    "service" : "S3FileManager",
+    "operation" : "downloadFile",
+    "operationId" : "S3fileManagerController_downloadFile",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "S3fileManager"
+  }
+}

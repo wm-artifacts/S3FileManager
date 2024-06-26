@@ -1,0 +1,24 @@
+{
+  "S3FileManagerListAllFoldersWithObjects" : {
+    "_id" : "wm-S3FileManagerListAllFoldersWithObjects-wm.ServiceVariable-1717048028630",
+    "name" : "S3FileManagerListAllFoldersWithObjects",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "S3FileManager",
+    "operation" : "listAllFoldersWithObjects",
+    "operationId" : "S3fileManagerController_listAllFoldersWithObjects",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "S3fileManager"
+  }
+}

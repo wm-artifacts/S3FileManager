@@ -1,0 +1,82 @@
+{
+  "appNotification" : {
+    "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "list"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
+  "goToPage_Main" : {
+    "_id" : "wm-wm.NavigationVariable1389180517517",
+    "name" : "goToPage_Main",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "operation" : "gotoPage",
+    "pageName" : "Main"
+  },
+  "goToPage_ManageFiles" : {
+    "_id" : "wm-goToPage_S3FolderDetails-wm.NavigationVariable-1716788763579",
+    "name" : "goToPage_ManageFiles",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManageFiles",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ManageFilesOld" : {
+    "_id" : "wm-goToPage_ManageFiles-wm.NavigationVariable-1716214538438",
+    "name" : "goToPage_ManageFilesOld",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManageFilesOld",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ManagePictures" : {
+    "_id" : "wm-goToPage_ManagePicture-wm.NavigationVariable-1674459343410",
+    "name" : "goToPage_ManagePictures",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManagePictures",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ManageS3Details" : {
+    "_id" : "wm-goToPage_ManageS3Details-wm.NavigationVariable-1716351682933",
+    "name" : "goToPage_ManageS3Details",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ManageS3Details",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

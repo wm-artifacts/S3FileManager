@@ -1,0 +1,353 @@
+{
+  "description" : null,
+  "methods" : {
+    "createFolderInS3" : [ {
+      "url" : {
+        "value" : "/folderInS3",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "folderName" : {
+          "name" : {
+            "value" : "folderName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "deleteFile" : [ {
+      "url" : {
+        "value" : "/file",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "DELETE",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "s3KeyName" : {
+          "name" : {
+            "value" : "s3KeyName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "deleteFolder" : [ {
+      "url" : {
+        "value" : "/folder",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "DELETE",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "folderName" : {
+          "name" : {
+            "value" : "folderName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "downloadFile" : [ {
+      "url" : {
+        "value" : "/downloadFile",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "s3KeyName" : {
+          "name" : {
+            "value" : "s3KeyName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "filterObjectsByFolders" : [ {
+      "url" : {
+        "value" : "/filterObjectsByFolders",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "folderPath" : {
+          "name" : {
+            "value" : "folderPath",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "listAllFoldersWithObjects" : [ {
+      "url" : {
+        "value" : "/allFoldersWithObjects",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ],
+    "listObjects" : [ {
+      "url" : {
+        "value" : "/objects",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ],
+    "listRootLevelFoldersObjects" : [ {
+      "url" : {
+        "value" : "/rootLevelFoldersObjects",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ],
+    "uploadFilesFromCsvToS3" : [ {
+      "url" : {
+        "value" : "/uploadFilesFromCsvToS3",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "folderName" : {
+          "name" : {
+            "value" : "folderName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "csvFile" : {
+          "name" : {
+            "value" : "csvFile",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "FORM",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "uploadFilesToS3" : [ {
+      "url" : {
+        "value" : "/uploadFilesToS3",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "folderPath" : {
+          "name" : {
+            "value" : "folderPath",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "files" : {
+          "name" : {
+            "value" : "files",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "FORM",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "uploadFileToIcons" : [ {
+      "url" : {
+        "value" : "/uploadFileToIcons",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "file" : {
+          "name" : {
+            "value" : "file",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "FORM",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "uploadFileToPhotos" : [ {
+      "url" : {
+        "value" : "/uploadFileToPhotos",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "file" : {
+          "name" : {
+            "value" : "file",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "FORM",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "uploadFileToSpecifiedDirectory" : [ {
+      "url" : {
+        "value" : "/uploadFileToSpecifiedDirectory",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "file" : {
+          "name" : {
+            "value" : "file",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "FORM",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "directory" : {
+          "name" : {
+            "value" : "directory",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ]
+  }
+}

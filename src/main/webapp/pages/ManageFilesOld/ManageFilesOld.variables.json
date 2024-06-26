@@ -1,0 +1,23 @@
+{
+  "jsListS3FoldersAndObjects" : {
+    "_id" : "wm-jsListS3FoldersAndObjects-wm.ServiceVariable-1716805295050",
+    "name" : "jsListS3FoldersAndObjects",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "S3FileManager",
+    "operation" : "listAllFoldersWithObjects",
+    "operationId" : "S3fileManagerController_listAllFoldersWithObjects",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "S3fileManager"
+  }
+}

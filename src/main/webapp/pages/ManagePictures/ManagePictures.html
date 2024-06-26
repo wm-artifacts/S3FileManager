@@ -1,0 +1,95 @@
+<wm-page pagetitle="Manage Picture" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid4">
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn10"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn11">
+                        <wm-button class="btn-primary" caption="New Photo" type="button" margin="unset 0.5em 1em 0.5em" name="buttonNew" iconclass="wm-sl-l sl-add" on-click="Widgets.dialogUploadImage.open()"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn15">
+                        <wm-button class="btn-primary" caption="New Team Icon" type="button" margin="unset 0.5em 1em 0.5em" iconclass="wm-sl-l sl-add" on-click="Widgets.dialogIcon.open()" name="buttonNewIcon"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn15_1">
+                        <wm-button class="btn-primary" caption="New Image" type="button" margin="unset 0.5em 1em 0.5em" iconclass="wm-sl-l sl-add" on-click="Widgets.dialogUploadImagesToPath.open()" name="buttonNewImage"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                        <wm-table statehandler="URL" name="listUploadedFileObjectsTable1" title="" dataset="bind:Variables.jsListAllFiles.dataSet" navigation="Basic" pagesize="20" filtermode="search">
+                            <wm-table-column binding="key" caption="File Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="customField1" caption="URL" widget-type="label" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false">
+                                <wm-label caption="bind:'https://'+Widgets.listUploadedFileObjectsTable1.currentItem.bucketName+'.'+Variables.stvS3Details.dataSet.s3_region+'/'+Widgets.listUploadedFileObjectsTable1.currentItem.key" class="" conditionalclass=""
+                                    condtionalstyle=""></wm-label>
+                            </wm-table-column>
+                            <wm-table-column binding="lastModified" caption="Last Modified" width="100px" edit-widget-type="date" type="date" show="true" readonly="false"></wm-table-column>
+                            <wm-table-column binding="customField" caption="Actions" widget-type="label" width="100px" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false">
+                                <wm-container name="container1" content="partialDownload">
+                                    <wm-param name="keyName" value="bind:Widgets.listUploadedFileObjectsTable1.currentItem.key" type="string"></wm-param>
+                                </wm-container>
+                            </wm-table-column>
+                        </wm-table>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Upload Image" iconclass="wi wi-file-text" name="dialogUploadImage">
+        <wm-layoutgrid name="layoutgrid2">
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.jsUploadPhoto.dataSet" captionalign="left" name="uploadFileForm" on-success="Widgets.dialogUploadImage.close();Widgets.listUploadedFileObjectsTable1.refreshData()">
+                        <wm-layoutgrid columns="1" name="layoutgrid3">
+                            <wm-gridrow name="gridrow5">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                                    <wm-form-field readonly="false" name="file" displayname="File" key="file" type="file" show="true" widget="upload"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" display-name="Reset" type="reset"></wm-form-action>
+                        <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" type="submit"></wm-form-action>
+                    </wm-form>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Upload Icon" iconclass="wi wi-file-text" name="dialogIcon">
+        <wm-layoutgrid name="layoutgrid5">
+            <wm-gridrow name="gridrow8">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn12_1">
+                    <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.jsUploadIcon.dataSet" captionalign="left" name="uploadFileToIconsForm1" on-success="Widgets.dialogIcon.close();Widgets.listUploadedFileObjectsTable1.refreshData()">
+                        <wm-layoutgrid columns="1" name="layoutgrid6">
+                            <wm-gridrow name="gridrow9">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                    <wm-form-field readonly="false" name="file" displayname="File" key="file" type="file" show="true" widget="upload"></wm-form-field>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" display-name="Reset" type="reset"></wm-form-action>
+                        <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" type="submit"></wm-form-action>
+                    </wm-form>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Upload Image" iconclass="wi wi-file-text" name="dialogUploadImagesToPath">
+        <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.jsUploadFileToSpecifiedDirectory.dataSet" captionalign="left" name="formUploadImage" on-success="Widgets.dialogUploadImagesToPath.close();Widgets.listUploadedFileObjectsTable1.refreshData()">
+            <wm-layoutgrid columns="1" name="layoutgrid7">
+                <wm-gridrow name="gridrow9_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                        <wm-form-field readonly="false" name="file" displayname="File" key="file" type="file" show="true" widget="upload"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn14_1">
+                        <wm-form-field readonly="false" name="directory" displayname="Directory" key="directory" type="string" show="true" widget="text"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-action key="reset" class="form-reset btn-default" iconclass="wi wi-refresh" display-name="Reset" type="reset"></wm-form-action>
+            <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" type="submit"></wm-form-action>
+        </wm-form>
+    </wm-dialog>
+</wm-page>
